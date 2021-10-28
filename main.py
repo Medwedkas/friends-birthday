@@ -1,25 +1,29 @@
-import time
+from datetime import datetime
+import win10toast
 
 
-class Birthday:
-    def get_person(self):
-        print("Что вам напомнить?")
-        text = str(input())
-        return text
-
-    def get_date(self):
-        print("Через какое время вам напомнить?")
-        local_time = float(input())
-        local_time = local_time * 60
-        time.sleep(local_time)
-        return local_time
-
-    def osnov(self):
-        print("Через какое время вам напомнить?")
-        text = str(input())
-        local_time = float(input())
-        local_time = local_time * 60
-        time.sleep(local_time)
+def get_name():
+    print("введите Имя и Фамилия именинника")
+    name = str(input())
+    return name
 
 
-obj = Birthday()
+def get_date():
+    print("введите дату, когда вам напомнить про день рождения в формате dd/mm/YY H:M:S")
+    date_reminder = str(input())
+    return date_reminder
+
+
+def date_timer():
+    name = get_name()
+    date_reminder = get_date()
+    while True:
+        now = datetime.now()
+        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+        if dt_string == date_reminder:
+            toaster = win10toast.ToastNotifier()
+            toaster.show_toast("Скоро день рождения ", name, )
+            break
+
+
+date_timer()
