@@ -1,13 +1,13 @@
 import unittest
-from main import obj
+from main import get_name
+from main import get_date
 
 
 class test(unittest.TestCase):
-    def test_get_person(self):
-        self.assertEqual(obj.get_person(), 'Alex')  # input Alex
-        self.assertEqual(obj.get_person(), 'Maxim')  # input Maxim
-        self.assertEqual(obj.get_person(), 'Anton')  # input Anton
+    def test_get_name(self):
+        self.assertEqual(get_name(), 'Alex')  # input Alex
+        self.assertEqual(get_name(), 'Maxim')  # input Maxim
+        self.assertEqual(get_name(), 'Anton')  # input Anton
 
     def test_get_date(self):
-        self.assertEqual(obj.get_date(), 60.0)  # input 1
-        self.assertEqual(obj.get_date(), 120.0)  # input 2
+        self.assertEqual(get_date(), "28/10/2021 13:40:10")
