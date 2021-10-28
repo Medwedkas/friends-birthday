@@ -8,6 +8,11 @@ class test(unittest.TestCase):
         self.assertEqual(get_name(), 'Alex')  # input Alex
         self.assertEqual(get_name(), 'Maxim')  # input Maxim
         self.assertEqual(get_name(), 'Anton')  # input Anton
+        self.assertEqual(get_name(), '-+_=-')
+        self.assertEqual(get_name(), 'Александр')
+        self.assertEqual(get_name(), 'ФАФАц2')
 
     def test_get_date(self):
         self.assertEqual(get_date(), "28/10/2021 13:40:10")
+
+

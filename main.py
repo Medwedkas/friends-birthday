@@ -3,7 +3,7 @@ import win10toast
 
 
 def get_name():
-    print("введите Имя и Фамилия именинника")
+    print("введите Имя и Фамилия именинника, дату дня рождения")
     name = str(input())
     return name
 
